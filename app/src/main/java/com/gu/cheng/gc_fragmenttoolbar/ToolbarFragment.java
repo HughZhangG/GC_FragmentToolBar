@@ -23,6 +23,7 @@ public class ToolbarFragment extends Fragment {
         this.mContext = context;
     }
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle
@@ -36,12 +37,16 @@ public class ToolbarFragment extends Fragment {
     private void initToolbar(View inflate) {
         Toolbar toolbar = (Toolbar) inflate.findViewById(R.id.toolbar);
 
-        if (mContext instanceof AppCompatActivity) {
-            AppCompatActivity activity = (AppCompatActivity) mContext;
-            activity.setSupportActionBar(toolbar);
-            ActionBar supportActionBar = activity.getSupportActionBar();
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
-            supportActionBar.setDisplayShowHomeEnabled(true);
+        if (toolbar != null) {
+
+
+            if (mContext instanceof AppCompatActivity) {
+                AppCompatActivity activity = (AppCompatActivity) mContext;
+                activity.setSupportActionBar(toolbar);
+                ActionBar supportActionBar = activity.getSupportActionBar();
+                supportActionBar.setDisplayHomeAsUpEnabled(true);
+                supportActionBar.setDisplayShowHomeEnabled(true);
+            }
         }
 
     }

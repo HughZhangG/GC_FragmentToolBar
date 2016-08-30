@@ -2,12 +2,14 @@ package com.gu.cheng.gc_fragmenttoolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,9 +21,12 @@ import java.util.List;
 
 public class ScrollingActivity extends AppCompatActivity {
 
+    private static final String TAG = "ScrollingActivity";
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private BottomSheetBehavior mBottomSheetBehavior;
+    private AppBarLayout mAppBarLayout;
+    private LayoutInflater mLayoutInflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class ScrollingActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.id_view_pager);
         mTabLayout = (TabLayout) findViewById(R.id.id_tab_layout);
 
-        List<Fragment> fragments = new ArrayList<>();
+        final List<Fragment> fragments = new ArrayList<>();
         fragments.add(new PicToolbarFragment());
         fragments.add(new ToolbarFragment());
         List<String> titles = new ArrayList<>();
@@ -42,6 +47,8 @@ public class ScrollingActivity extends AppCompatActivity {
         mViewPager.setAdapter(mAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
+
+
 
 //        StatusBarUtil.setTranslucent(ScrollingActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
 
@@ -71,6 +78,8 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private ScaleDownShowBehavior.OnStateChangedListener onStateChangedListener = new ScaleDownShowBehavior.OnStateChangedListener() {
         @Override
