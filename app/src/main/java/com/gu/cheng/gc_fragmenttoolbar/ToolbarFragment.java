@@ -28,7 +28,7 @@ public class ToolbarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle
             savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_second, container, false);
-        initToolbar(inflate);
+//        initToolbar(inflate);
 
         return inflate;
     }

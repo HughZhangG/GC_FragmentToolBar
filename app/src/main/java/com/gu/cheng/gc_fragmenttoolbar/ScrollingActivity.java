@@ -1,24 +1,28 @@
 package com.gu.cheng.gc_fragmenttoolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.gu.cheng.gc_fragmenttoolbar.behavior.ScaleDownShowBehavior;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class ScrollingActivity extends BaseActivity {
 
+    private static final String TAG = "ScrollingActivity";
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private BottomSheetBehavior mBottomSheetBehavior;
@@ -43,16 +47,16 @@ public class ScrollingActivity extends AppCompatActivity {
 
         mTabLayout.setupWithViewPager(mViewPager);
 
-//        StatusBarUtil.setTranslucent(ScrollingActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        StatusBarUtil.setTranslucent(ScrollingActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            // 透明状态栏
-//            getWindow().addFlags(
-//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            // 透明导航栏
-//            getWindow().addFlags(
-//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//        }
+        //透明状态栏
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window window = getWindow();
+            // Translucent status bar
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
 
         final FloatingActionButton FAB = (FloatingActionButton) findViewById(R.id.fab);
         FAB.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +75,8 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private ScaleDownShowBehavior.OnStateChangedListener onStateChangedListener = new ScaleDownShowBehavior.OnStateChangedListener() {
         @Override
@@ -111,4 +117,7 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
