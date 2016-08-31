@@ -1,21 +1,20 @@
 package com.gu.cheng.gc_fragmenttoolbar;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.gu.cheng.gc_fragmenttoolbar.behavior.ScaleDownShowBehavior;
-import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +25,8 @@ public class ScrollingActivity extends BaseActivity {
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private BottomSheetBehavior mBottomSheetBehavior;
+    private AppBarLayout mAppBarLayout;
+    private LayoutInflater mLayoutInflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class ScrollingActivity extends BaseActivity {
         mViewPager = (ViewPager) findViewById(R.id.id_view_pager);
         mTabLayout = (TabLayout) findViewById(R.id.id_tab_layout);
 
-        List<Fragment> fragments = new ArrayList<>();
+        final List<Fragment> fragments = new ArrayList<>();
         fragments.add(new PicToolbarFragment());
         fragments.add(new ToolbarFragment());
         List<String> titles = new ArrayList<>();
@@ -47,16 +48,16 @@ public class ScrollingActivity extends BaseActivity {
 
         mTabLayout.setupWithViewPager(mViewPager);
 
-        StatusBarUtil.setTranslucent(ScrollingActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+//        StatusBarUtil.setTranslucent(ScrollingActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
 
         //透明状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            // Translucent status bar
-            window.setFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            Window window = getWindow();
+//            // Translucent status bar
+//            window.setFlags(
+//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        }
 
         final FloatingActionButton FAB = (FloatingActionButton) findViewById(R.id.fab);
         FAB.setOnClickListener(new View.OnClickListener() {
@@ -73,10 +74,13 @@ public class ScrollingActivity extends BaseActivity {
 //
 //        mBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.id_tab_layout));
 
-
     }
 
+    @Override
+    public void onAttachFragment(android.app.Fragment fragment) {
+        super.onAttachFragment(fragment);
 
+    }
 
     private ScaleDownShowBehavior.OnStateChangedListener onStateChangedListener = new ScaleDownShowBehavior.OnStateChangedListener() {
         @Override

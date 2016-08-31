@@ -27,4 +27,8 @@ dependencies {
     compile 'com.jaeger.statusbaruitl:library:1.1.1'
 
     compile 'in.srain.cube:ultra-ptr:1.0.11'
+
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+    //Optional: see how to use the utility.
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
 }
