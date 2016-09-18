@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".FrameLayoutActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/id_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        ></FrameLayout>
+
+    <!--  <fragment
+          android:id="@+id/fragment_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fitsSystemWindows="true"
+          android:name="com.gu.cheng.gc_fragmenttoolbar.fragment.PicToolbarFragment"
+          />-->
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/id_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        >
+        <android.support.design.widget.TabItem
+            android:id="@+id/id_tab_1"
+            android:tag="@+id/id_tab_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="图片Toolbar"
+            android:clickable="true"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/id_tab_2"
+            android:tag="@+id/id_tab_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="普通Toolbar"
+            android:clickable="true"
+            />
+    </android.support.design.widget.TabLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@android:drawable/ic_dialog_email"
+        app:layout_behavior="@string/scale_down_show_behavior"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        />
+
+</RelativeLayout>
+

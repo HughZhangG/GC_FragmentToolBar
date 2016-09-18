@@ -1,4 +1,4 @@
-package com.gu.cheng.gc_fragmenttoolbar;
+package com.gu.cheng.gc_fragmenttoolbar.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.gu.cheng.gc_fragmenttoolbar.R;
 
 /**
  * Created by gc on 2016/8/30.

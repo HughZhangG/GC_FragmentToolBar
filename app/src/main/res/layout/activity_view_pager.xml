@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     android:background="@android:color/background_light"
-    tools:context="com.gu.cheng.gc_fragmenttoolbar.ScrollingActivity"
+    tools:context=".FrameLayoutActivity"
     >
 
     <android.support.v4.view.ViewPager
         android:id="@+id/id_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="?attr/actionBarSize"
-        android:fitsSystemWindows="true"
         android:background="@color/colorAccent"
         >
 
     </android.support.v4.view.ViewPager>
 
-
-
-
+    <!--  <fragment
+          android:id="@+id/fragment_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fitsSystemWindows="true"
+          android:name="com.gu.cheng.gc_fragmenttoolbar.fragment.PicToolbarFragment"
+          />-->
 
     <android.support.design.widget.TabLayout
         android:id="@+id/id_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         >
     </android.support.design.widget.TabLayout>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="70dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:src="@android:drawable/ic_dialog_email"
         app:layout_behavior="@string/scale_down_show_behavior"
-        app:layout_scrollFlags="scroll|enterAlways|snap" />
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        />
 
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

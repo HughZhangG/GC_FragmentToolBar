@@ -1,4 +1,4 @@
-package com.gu.cheng.gc_fragmenttoolbar;
+package com.gu.cheng.gc_fragmenttoolbar.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.gu.cheng.gc_fragmenttoolbar.R;
 
 /**
  * Created by gc on 2016/8/26.
@@ -29,7 +31,7 @@ public class ToolbarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle
             savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_second, container, false);
-//        initToolbar(inflate);
+        initToolbar(inflate);
 
         return inflate;
     }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.gu.cheng.gc_fragmenttoolbar.MenuStartActivity">
+
+    <Button
+        android:id="@+id/id_btn_start_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="启动单独沉浸Activity"
+        android:onClick="onClick"
+        />
+    <Button
+        android:id="@+id/id_btn_start_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="ViewPager切换Fragment沉浸Activity"
+        android:onClick="onClick"
+        android:layout_below="@id/id_btn_start_main"
+        />
+    <Button
+        android:id="@+id/id_btn_start_frame_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="FrameLayout切换Fragment沉浸Activity"
+        android:onClick="onClick"
+        android:layout_below="@id/id_btn_start_viewpager"
+        />
+
+</RelativeLayout>

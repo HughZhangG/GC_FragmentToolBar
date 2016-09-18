@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:contentScrim="?attr/colorPrimary"
-        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
         android:fitsSystemWindows="true"
         >
         <!--
@@ -38,7 +38,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             app:layout_collapseMode="pin"
-            app:layout_scrollFlags="scroll"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             >
